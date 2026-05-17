@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merci — Helvetic Hypo</title>
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '27412048241733681');
+fbq('track', 'PageView');
+
+var params = new URLSearchParams(window.location.search);
+var phone = params.get('phone') || '';
+var name = params.get('name') || '';
+var eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substring(2);
+
+fbq('track', 'Lead', {
+  content_name: 'Hypothèque Helvetic Hypo'
+}, {
+  eventID: eventId,
+  user_data: {
+    ph: phone,
+    fn: name.split(' ')[0] || '',
+    ln: name.split(' ').slice(1).join(' ') || ''
+  }
+});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=27412048241733681&ev=Lead&noscript=1"/></noscript>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#FFFFFF;color:#0D1B2A;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+nav{padding:16px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(0,0,0,0.08);background:#fff}
+.logo{font-size:1.1rem;font-weight:700;letter-spacing:-.02em;color:#1B3A6B}
+.logo span{color:#C8922A}
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 24px}
+.card{max-width:480px;width:100%;background:#F4F6FB;border:1px solid rgba(27,58,107,0.15);border-radius:20px;padding:40px 32px;text-align:center;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1B3A6B,#2A5298,#C8922A)}
+.icon{font-size:3.5rem;margin-bottom:20px}
+h1{font-size:1.6rem;font-weight:800;margin-bottom:12px;letter-spacing:-.02em;color:#0D1B2A}
+h1 span{color:#C8922A}
+.sub{font-size:.95rem;color:rgba(13,27,42,.6);line-height:1.7;margin-bottom:28px}
+.steps{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;text-align:left}
+.step{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border-radius:12px;border:1px solid rgba(27,58,107,0.08)}
+.step-num{width:28px;height:28px;background:#1B3A6B;color:#fff;border-radius:50%;font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-text{font-size:.85rem;color:#0D1B2A}
+.btn-back{display:inline-block;background:linear-gradient(135deg,#1B3A6B,#2A5298);color:#fff;font-weight:700;font-size:.9rem;padding:14px 28px;border-radius:50px;text-decoration:none;transition:transform .2s}
+.btn-back:hover{transform:translateY(-2px)}
+footer{padding:20px 24px;border-top:1px solid rgba(0,0,0,0.06);text-align:center;font-size:.68rem;color:rgba(13,27,42,.3)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Helvetic<span>Hypo</span></div>
+  <div style="font-size:.72rem;color:rgba(13,27,42,.4)">🔒 nLPD Suisse</div>
+</nav>
+
+<div class="main">
+  <div class="card">
+    <div class="icon">🏦</div>
+    <h1>Merci <span>!</span></h1>
+    <p class="sub">
+      Votre demande de comparaison a bien été enregistrée.<br>
+      Un expert hypothécaire vous contacte <strong>dans les 24h</strong>.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Votre dossier est transmis à un expert hypothécaire partenaire</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Il analyse votre situation et compare les meilleures offres disponibles</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Vous recevez les meilleures offres — sans engagement, sans frais</div>
+      </div>
+    </div>
+
+    <a href="/" class="btn-back">← Retour à l'accueil</a>
+  </div>
+</div>
+
+<footer>
+  Helvetic Hypo · Suisse romande · Service de mise en relation · Conforme nLPD
+</footer>
+
+</body>
+</html>
